@@ -45,7 +45,7 @@ export default function allTheCuties() {
     <div style={{ display: 'flex', flexWrap: 'wrap' }}>
       {clarkieAndBrucie.map((src, index) => (
         <div key={index} style={{ margin: '5px' }}>
-          <Image src={src} alt={`Bruce ${index}`} width={200} height={200} />
+          <Image src={src} alt={`Bruce ${index}`} width={100} height={100} />
         </div>
       ))}
     </div>
