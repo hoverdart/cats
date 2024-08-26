@@ -4,6 +4,7 @@ import "./globals.css";
 import { Navbar } from "./components/nav";
 const inter = Inter({ subsets: ["latin"] });
 
+
 export const metadata: Metadata = {
   title: "Cats!",
   description: "Lots of Cats?",
@@ -16,11 +17,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <link rel="icon" type="image/x-icon" href="https://i.imgur.com/XUapnXx.png"></link>
+      <link rel="image/x-icon" href="https://i.imgur.com/XUapnXx.png" />
       <body className={inter.className}>
         <Navbar />
         {children}
-        
       </body>
     </html>
   );

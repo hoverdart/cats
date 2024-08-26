@@ -42,7 +42,7 @@ export default function allTheCuties() {
   shuffle(clarkieAndBrucie);
 
   return (
-    <div style={{ display: 'flex', flexWrap: 'wrap' }}>
+    <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center'}}>
       {clarkieAndBrucie.map((src, index) => (
         <div key={index} style={{ margin: '5px' }}>
           <Image src={src} alt={`Bruce ${index}`} width={150} height={150} />

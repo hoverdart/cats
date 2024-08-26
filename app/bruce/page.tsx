@@ -13,7 +13,7 @@ export default function brucie() {
   const images = filenames.map((filename) => `/brucePics/${filename}`);
 
   return (
-    <div style={{ display: 'flex', flexWrap: 'wrap' }}>
+    <div style={{ display: 'flex', flexWrap: 'wrap',justifyContent: 'center' }}>
       {images.map((src, index) => (
         <div key={index} style={{ margin: '5px' }}>
           <Image src={src} alt={`Bruce ${index}`} width={150} height={150} />
