@@ -1,10 +1,9 @@
 import fs from 'fs';
 import path from 'path';
 import Image from 'next/image';
-import brucie from './bruce/page';
 
 export default function allTheCuties() {
-  function shuffle(array) {
+  function shuffle(array: any) {
     let currentIndex = array.length;
   
     // While there remain elements to shuffle...
