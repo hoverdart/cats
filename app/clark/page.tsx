@@ -16,7 +16,7 @@ export default function clarkie() {
     <div style={{ display: 'flex', flexWrap: 'wrap' }}>
       {images.map((src, index) => (
         <div key={index} style={{ margin: '5px' }}>
-          <Image src={src} alt={`Clark ${index}`} width={200} height={200} />
+          <Image src={src} alt={`Clark ${index}`} width={150} height={150} />
         </div>
       ))}
     </div>

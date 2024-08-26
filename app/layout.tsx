@@ -16,6 +16,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <link rel="icon" type="image/x-icon" href="https://i.imgur.com/XUapnXx.png"></link>
       <body className={inter.className}>
         <Navbar />
         {children}
