@@ -22,14 +22,17 @@ export default function allTheCuties() {
   // Define the path to the images directory
   const clarkDir = path.join(process.cwd(), 'public/clarkPics');
   const bruceDir = path.join(process.cwd(), 'public/brucePics');
+  const bothDir = path.join(process.cwd(), 'public/bothTheCatPics');
 
   // Get the filenames of all images in the directory
   const clarkFiles = fs.readdirSync(clarkDir);
   const bruceFiles = fs.readdirSync(bruceDir);
+  const bothFiles = fs.readdirSync(bothDir);
 
   // Create an array of image URLs
   var clarkie = clarkFiles.map((filename) => `/clarkPics/${filename}`);
   var brucie = bruceFiles.map((filename) => `/brucePics/${filename}`);
+  var all = bothFiles.map((filename) => `/bothTheCatPics/${filename}`);
 
   //Combine Arrays
   var clarkieAndBrucie = [];
@@ -39,13 +42,17 @@ export default function allTheCuties() {
   for (var i = 0; i < brucie.length; i++) {
     clarkieAndBrucie.push(brucie[i]); 
   }
+  for (var i = 0; i < all.length; i++) {
+    clarkieAndBrucie.push(all[i]); 
+  }
+  console.log(clarkieAndBrucie);
   shuffle(clarkieAndBrucie);
 
   return (
     <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center'}}>
       {clarkieAndBrucie.map((src, index) => (
         <div key={index} style={{ margin: '5px' }}>
-          <Image src={src} alt={`Bruce ${index}`} width={150} height={150} />
+          <Image src={src} alt={`AllCats ${index}`} width={150} height={150} />
         </div>
       ))}
     </div>
