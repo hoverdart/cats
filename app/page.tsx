@@ -45,13 +45,12 @@ export default function allTheCuties() {
   for (var i = 0; i < all.length; i++) {
     clarkieAndBrucie.push(all[i]); 
   }
-  console.log(clarkieAndBrucie);
   shuffle(clarkieAndBrucie);
 
   return (
     <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center'}}>
       {clarkieAndBrucie.map((src, index) => (
-        <div key={index} style={{ margin: '5px' }}>
+        <div key={index} style={{ margin: '5px' }} className = "transition-all hover:scale-150">
           <Image src={src} alt={`AllCats ${index}`} width={150} height={150} />
         </div>
       ))}

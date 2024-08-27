@@ -15,7 +15,7 @@ export default function clarkie() {
   return (
     <div style={{ display: 'flex', flexWrap: 'wrap',justifyContent: 'center' }}>
       {images.map((src, index) => (
-        <div key={index} style={{ margin: '5px' }}>
+        <div key={index} style={{ margin: '5px' }} className = "transition-all hover:scale-125">
           <Image src={src} alt={`Clark ${index}`} width={150} height={150} />
         </div>
       ))}
