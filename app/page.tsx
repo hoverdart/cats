@@ -50,7 +50,7 @@ export default function allTheCuties() {
   return (
     <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center'}}>
       {clarkieAndBrucie.map((src, index) => (
-        <div key={index} style={{ margin: '5px' }} className = "transition-all hover:scale-150">
+        <div key={index} style={{ margin: '5px' }} className = "transition-all hover:scale-125">
           <Image src={src} alt={`AllCats ${index}`} width={150} height={150} />
         </div>
       ))}
