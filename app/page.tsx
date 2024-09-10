@@ -18,9 +18,13 @@ function shuffle(array: any) {
   }
 }
 export default function allTheCuties() {
-  shuffle(allPics);
+  var clarkieAndBrucie = [];
+  for (var i = 0; i < allPics.length; i++) {
+    clarkieAndBrucie.push(allPics[i]); 
+  }
+  shuffle(clarkieAndBrucie);
 
   return (
-    <ImageDisplayer images={allPics} />
+    <ImageDisplayer images={clarkieAndBrucie} />
   );
 }
