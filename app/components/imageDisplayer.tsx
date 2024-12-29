@@ -6,7 +6,7 @@ export function ImageDisplayer ({images} : {images: string[]}) { //transition-al
   return (
     <div className = "grid grid-flow-row auto-rows-max">
       {images.map((src: string | StaticImport, index: Key | null | undefined) => (
-        <div key={index} style={{ margin: '2px' }} className = "transition-all hover:scale-125"> 
+        <div key={index} style={{ margin: '2px' }} className = "transition-all hover:scale-110"> 
           <Image className = "h-auto max-w-full" src={src} alt={`cat ${index}`} width={600} height={600} />
         </div>
       ))}
