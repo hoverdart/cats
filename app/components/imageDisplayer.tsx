@@ -7,7 +7,7 @@ export function ImageDisplayer ({images, size, imageSize} : {images: string[], s
   return ( //grid grid-flow-row auto-rows-max
     <div className = {css}>
       {images.map((src: string | StaticImport, index: Key | null | undefined) => (
-          <Image className = "mb-2 h-auto max-w-fill transition-all hover:scale-110" src={src} alt={`cat ${index}`} width={1000} height={1000} />
+          <Image className = "mb-2 h-auto max-w-fill transition-all hover:scale-110" src={src} alt={`cat ${index}`} width={1000} height={1000} key={index} />
       ))}
     </div>
   );
