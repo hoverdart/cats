@@ -16,37 +16,19 @@ function shuffle(array: any) {
 }
 
 export function MasterDisplayer ({images} : {images: string[]}) { //Displays all the displayers, splitting the images into 4 columns
-    const [size, setSize] = useState(600)
-    if(size == 600){
+    const [size, setSize] = useState(3)
+    if(size == 1){
         shuffle(images)
     }
-    var column1 = [];
-    var column2 = [];
-    var column3 = [];
-    var column4 = [];
-    // Split images evenly across 4 columns
-    for (var i = 0; i < images.length; i++) {
-        if (i % 4 == 0) {
-            column1.push(images[i]);
-        } else if (i % 4 == 1) {
-            column2.push(images[i]);
-        } else if (i % 4 == 2) {
-            column3.push(images[i]);
-        } else {
-            column4.push(images[i]);
-        }
-    }
-    
-    return (
+    var colString = ["3xs", "2xs", "xs", "sm", "md", "lg", "xl", "2xl", "3xl", "4xl", "5xl", "6xl", "7xl"];
+    var cols = colString[size-1]
+    console.log(cols)
+    return ( //grid grid-flow-col auto-cols-*
         <>
         <Navbar changeSize = {(value: number) => {setSize(value)}}/>
-        <div className = "grid grid-flow-col auto-cols-*">
-            <ImageDisplayer images={column1} size={size} />
-            <ImageDisplayer images={column2} size={size} />
-            <ImageDisplayer images={column3} size={size} />
-            <ImageDisplayer images={column4} size={size} />
+        <div className = "">
+            <ImageDisplayer images={images} size={cols} />
         </div>  
         </>
-        
     );
 }

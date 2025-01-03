@@ -16,7 +16,6 @@ const navItems = {
 export function Navbar({changeSize}:{changeSize: any}) { //flex align-middle relative py-1 px-2 m-1 -> {eachProp, eachProp} : {eachProp: itsType, eachProp: itsType...}
   const changeSizes = (value: number | number[]) => {
     changeSize(value); // Update the state with the slider's value
-    console.log('Slider Value:', value); // Log or use the slider value
   };
 
   return (
@@ -37,7 +36,7 @@ export function Navbar({changeSize}:{changeSize: any}) { //flex align-middle rel
             })}
           </div>
 
-          <Slider className="py-1 max-w-sm pr-5 m-1" defaultValue={500} label="Image Size" maxValue={500} minValue={100} step={1} onChange={changeSizes} />
+          <Slider className="py-1 max-w-sm pr-5 m-1" defaultValue={3} label="Image Size" maxValue={8} minValue={1} step={1} onChange={changeSizes} />
           
         </nav>
       </div>
