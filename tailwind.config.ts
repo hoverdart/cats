@@ -18,5 +18,19 @@ const config: Config = {
     },
   },
   plugins: [nextui()],
+  safelist: [
+    "columns-3xs",
+    "columns-2xs",
+    "columns-xs",
+    "columns-sm",
+    "columns-md",
+    "columns-lg",
+    "columns-xl",
+    "columns-2xl",
+    "columns-3xl",
+    "columns-4xl",
+    "gap-2",
+    // Add all required column classes up to "columns-13"
+  ],
 };
 export default config;
