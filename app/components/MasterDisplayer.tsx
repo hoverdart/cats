@@ -27,7 +27,7 @@ export function MasterDisplayer ({images} : {images: string[]}) { //Displays all
         <>
         <Navbar changeSize = {(value: number) => {setSize(value)}}/>
         <div className = "">
-            <ImageDisplayer images={images} size={cols} />
+            <ImageDisplayer images={images} size={cols} imageSize ={size} />
         </div>  
         </>
     );
