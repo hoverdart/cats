@@ -23,9 +23,10 @@ export function MasterDisplayer ({images} : {images: string[]}) { //Displays all
     var colString = ["3xs", "2xs", "xs", "sm", "md", "lg", "xl", "2xl", "3xl", "4xl", "5xl", "6xl", "7xl"];
     var cols = colString[size-1]
     console.log(cols)
-    return ( //grid grid-flow-col auto-cols-*
+    return ( //<h1 className="font-extrabold dark:text-zinc-300 text-7xl/7 text-center justify-content-center mb-8">Cats!</h1>
         <>
         <Navbar changeSize = {(value: number) => {setSize(value)}}/>
+        
         <div className = "">
             <ImageDisplayer images={images} size={cols} imageSize ={size} />
         </div>  
