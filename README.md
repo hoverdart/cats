@@ -1,3 +1,3 @@
-## These are Cats
-Very cool cats
-I show all the cats
+## Cats!!
+Simple Next.js website using Tailwind's column system
+I show all the cats (these are not my cats)
