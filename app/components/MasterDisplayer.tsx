@@ -17,9 +17,9 @@ function shuffle(array: any) {
 
 export function MasterDisplayer ({images} : {images: string[]}) { //Displays all the displayers, splitting the images into 4 columns
     const [size, setSize] = useState(3)
-    //if(size == 1){
-        //shuffle(images)
-    //}
+    if(size == 1){
+        shuffle(images)
+    }
     var colString = ["3xs", "2xs", "xs", "sm", "md", "lg", "xl", "2xl", "3xl", "4xl", "5xl", "6xl", "7xl"];
     var cols = colString[size-1]
     console.log(cols)

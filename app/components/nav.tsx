@@ -11,6 +11,9 @@ const navItems = {
   '/clark': {
     name: 'Clark',
   },
+  '/diana': {
+    name: 'Diana',
+  },
 }
 
 export function Navbar({changeSize}:{changeSize: any}) { //flex align-middle relative py-1 px-2 m-1 -> {eachProp, eachProp} : {eachProp: itsType, eachProp: itsType...}
