@@ -17,13 +17,10 @@ const navItems = {
   },
 }
 
-export function Navbar({changeSize, doTheShuffle}:{changeSize: any, doTheShuffle:any}) { //flex align-middle relative py-1 px-2 m-1 -> {eachProp, eachProp} : {eachProp: itsType, eachProp: itsType...}
+export function Navbar({changeSize, doShuffle}:{changeSize: any, doShuffle:any}) { //flex align-middle relative py-1 px-2 m-1 -> {eachProp, eachProp} : {eachProp: itsType, eachProp: itsType...}
   const changeSizes = (value: number | number[]) => {
     changeSize(value); // Update the state with the slider's value
   };//<FaShuffle></FaShuffle>
-  const doShuffle = () =>{
-    doTheShuffle();
-  }
   return (
     <aside className="-ml-[8px] mb-16 tracking-tight">
       <div className="lg:sticky lg:top-20">
