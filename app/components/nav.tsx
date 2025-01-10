@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import {Slider} from "@nextui-org/slider";
-import { FaShuffle } from "react-icons/fa6";
+import { MdOutlineShuffleOn } from "react-icons/md";
 
 const navItems = {
   '/': {
@@ -17,11 +17,13 @@ const navItems = {
   },
 }
 
-export function Navbar({changeSize}:{changeSize: any}) { //flex align-middle relative py-1 px-2 m-1 -> {eachProp, eachProp} : {eachProp: itsType, eachProp: itsType...}
+export function Navbar({changeSize, doTheShuffle}:{changeSize: any, doTheShuffle:any}) { //flex align-middle relative py-1 px-2 m-1 -> {eachProp, eachProp} : {eachProp: itsType, eachProp: itsType...}
   const changeSizes = (value: number | number[]) => {
     changeSize(value); // Update the state with the slider's value
   };//<FaShuffle></FaShuffle>
-
+  const doShuffle = () =>{
+    doTheShuffle();
+  }
   return (
     <aside className="-ml-[8px] mb-16 tracking-tight">
       <div className="lg:sticky lg:top-20">
@@ -38,12 +40,12 @@ export function Navbar({changeSize}:{changeSize: any}) { //flex align-middle rel
                 </Link>
               )
             })}
-          </div>
-          
-          <div className="">
             
-            <Slider className="py-1 max-w-sm pr-5 m-1" defaultValue={3} label="Image Size" maxValue={8} minValue={1} step={1} onChange={changeSizes} />
           </div>
+         
+         
+          <MdOutlineShuffleOn className="text-gray-800 text-2xl dark:text-gray-100 transition-all hover:scale-125 hover:text-blue-500 mt-3" onClick={doShuffle} />
+          <Slider className="py-1 max-w-sm pr-5 m-1" defaultValue={3} label="Image Size" maxValue={8} minValue={1} step={1} onChange={changeSizes} />
           
         </nav>
       </div>

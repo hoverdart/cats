@@ -4,7 +4,7 @@ import { Key } from 'react';
 import { GiHollowCat } from 'react-icons/gi';
 
 export function ImageDisplayer ({images, size, imageSize} : {images: string[], size: string, imageSize:number}) {
-  var css = "columns-"+size+" gap-2";
+  var css = "columns-"+size+" gap-2 select-none";
   const openImage = (src: string) => {
     window.open(src, '_blank');
   };
@@ -22,7 +22,7 @@ export function ImageDisplayer ({images, size, imageSize} : {images: string[], s
         <div className="relative mb-2 h-auto max-w-fill transition-all hover:scale-110" key={index}>
           <Image src={src} alt={`cat ${index}`} width={1000} height={1000} className="w-full h-auto"/>
           <div className="absolute inset-0 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity bg-black bg-opacity-25" onDoubleClick={() => openImage(src as string)}>
-            <GiHollowCat className="text-white text-2xl cursor-pointer" onClick={() => downloadImage(src as string, index as Key)} />
+            <GiHollowCat className="text-white text-2xl cursor-pointer hover:text-gray-200" onClick={() => downloadImage(src as string, index as Key)} />
           </div>
         </div>
       ))}
