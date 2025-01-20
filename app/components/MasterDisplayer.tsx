@@ -1,6 +1,8 @@
 "use client"; // This is a client component 👈🏽
 import {ImageDisplayer} from "./imageDisplayer"
 import {Navbar} from "./nav"
+import 'bluesky-comments/bluesky-comments.css'
+import { BlueskyComments } from 'bluesky-comments';
 import React, { useState } from 'react';
 
 function shuffle(array: any) {
@@ -18,6 +20,8 @@ function shuffle(array: any) {
 export function MasterDisplayer ({images} : {images: string[]}) { //Displays all the displayers, splitting the images into 4 columns
     const [size, setSize] = useState(3);
     const [shuffleVar, willShuffle] = useState(false);
+    const [comments, showComments] = useState(false);
+
     if (shuffleVar){
         shuffle(images);
         willShuffle(!shuffleVar)
@@ -30,6 +34,10 @@ export function MasterDisplayer ({images} : {images: string[]}) { //Displays all
         <div className = "">
             <ImageDisplayer images={images} size={cols} imageSize ={size} />
         </div>  
+        <div className="my-4 flex flex-col items-center justify-center content-center">
+            <h5 className="text-3xl mb-6 font-bold text-gray-400 hover:text-zinc-300 pt-4 transition-all hover:underline cursor-pointer" onClick={() => showComments(!comments)}>{comments ? "Hide" : "Reveal"} Comments</h5>
+            {comments && <BlueskyComments className={`transition-opacity duration-900 ${comments ? 'opacity-100' : 'opacity-0'} ${comments ? 'block' : 'hidden'}`} uri="https://bsky.app/profile/shauryav.com/post/3lg5pj67td224"/>}
+        </div>
         </>
     );
 }
