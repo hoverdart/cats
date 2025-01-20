@@ -16,7 +16,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <link rel="image/x-icon" href="https://i.imgur.com/gw5T6OJ.png" />
+       <link rel="icon" href="/favicon.ico" type="image/x-icon" />
       <body className={inter.className}>
         {children}
       </body>

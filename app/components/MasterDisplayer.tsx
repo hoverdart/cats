@@ -3,6 +3,7 @@ import {ImageDisplayer} from "./imageDisplayer"
 import {Navbar} from "./nav"
 import 'bluesky-comments/bluesky-comments.css'
 import { BlueskyComments } from 'bluesky-comments';
+import {MdOutlineArrowCircleUp} from 'react-icons/md';
 import React, { useState } from 'react';
 
 function shuffle(array: any) {
@@ -34,8 +35,9 @@ export function MasterDisplayer ({images} : {images: string[]}) { //Displays all
         <div className = "">
             <ImageDisplayer images={images} size={cols} imageSize ={size} />
         </div>  
-        <div className="my-4 flex flex-col items-center justify-center content-center">
-            <h5 className="text-3xl mb-6 font-bold text-gray-400 hover:text-zinc-300 pt-4 transition-all hover:underline cursor-pointer" onClick={() => showComments(!comments)}>{comments ? "Hide" : "Reveal"} Comments</h5>
+        <div className="flex flex-col items-center justify-center content-center">
+            <MdOutlineArrowCircleUp className="text-gray-800 text-3xl dark:text-gray-100 transition-all hover:scale-125 hover:text-green-500 " onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} />
+            <h5 className="text-3xl mx-6 mb-6 font-bold text-gray-500 hover:text-green-500 pt-4 transition-all hover:scale-105 cursor-pointer" onClick={() => showComments(!comments)}>{comments ? "Hide" : "Reveal"} Comments</h5>
             {comments && <BlueskyComments className={`transition-opacity duration-900 ${comments ? 'opacity-100' : 'opacity-0'} ${comments ? 'block' : 'hidden'}`} uri="https://bsky.app/profile/shauryav.com/post/3lg5pj67td224"/>}
         </div>
         </>
